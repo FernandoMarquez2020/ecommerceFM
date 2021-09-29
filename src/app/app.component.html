@@ -29,26 +29,29 @@
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-danger" type="submit">Buscar</button>
+        <button class="btn btn-outline-info" type="submit">Buscar</button>
         
       </form>
-      <form class="d-flex" style="height: 36px;margin-left: 300px;">
+      
+      <div class="btn-group" role="group" aria-label="Button group with nested dropdown" style="margin-left: 10px; margin-right: 0px; margin-top: 2px;">
         
-        <button class="btn btn-outline-warning" type="submit" style="align-items: center;" ><i class="bi bi-cart3"></i></button>
+        <form class="d-flex" style="margin-left: 200px; margin-right: 5px;">
+          <button class="btn btn-outline-warning" type="submit" style="align-items: center;" ><i class="bi bi-cart3"></i></button>
+        </form>
         
-      </form>
-      <div class="btn-group" role="group" aria-label="Button group with nested dropdown" style="margin-left: 10px; margin-right: 0px;">
-        <button type="button" class="btn btn-outline-success" aria-disabled="true">Usuario</button>
+        
         
       
-        <div class="btn-group" role="group" style="margin-left: 1px;">
-          <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Iniciar Sesion {{""}}
+        <div class="btn-group" role="group" style="margin-right: 5px;">
+          <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" style="border-radius: 5px; height: 38px;" data-bs-toggle="dropdown" aria-expanded="false">
+            Entrar {{""}}
           </button>
           <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
             <li><a class="dropdown-item" href="#">Iniciar Sesion</a></li>
             <li><a class="dropdown-item" href="#">Registrarse</a></li>
-            <li><a class="dropdown-item" href="#">Gestion</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Mi Cuenta</a></li>
+            <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Salir</a></li>
           </ul>
         </div>
@@ -57,13 +60,11 @@
   </div>
 </nav>
 
-<div class="row" style="margin-top:45px; margin-bottom: 10px;">
-  <div class="col-9">
-      <!-- area de navegacion -->
-      <router-outlet></router-outlet>
-  </div>    
-  <div class="col-3">
-    <!-- area de navegacion -->
-    <router-outlet></router-outlet>
+<div class="row" style="margin-top:45px; margin-bottom: 10px;">   
+  <div class="col-2">
+    <app-menu-lateral></app-menu-lateral>
   </div>  
+  <div class="col-10">
+    <router-outlet></router-outlet>
+</div> 
 </div>

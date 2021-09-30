@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MenuLateralComponent } from './menus/menu-lateral/menu-lateral.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 
 @Component({
@@ -8,4 +10,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ecommerceFM';
+
+  constructor(private modalService: NgbModal) {}
+
+  open() {
+    const modalRef = this.modalService.open(MenuLateralComponent, { size: 'xl' });
+    
+  }
+
+
+
+
+
+
 }

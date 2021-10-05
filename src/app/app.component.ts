@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { MenuLateralComponent } from './menus/menu-lateral/menu-lateral.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
+import { CarritoComponent } from './compra/carrito/carrito.component';
+import { ProductosComponent } from './productos/productos/productos.component';
+import { CategoriasComponent } from './productos/categorias/categorias.component';
 
 
 @Component({
@@ -14,7 +17,7 @@ export class AppComponent {
   constructor(private modalService: NgbModal) {}
 
   open() {
-    const modalRef = this.modalService.open(MenuLateralComponent, { size: 'xl' });
+    const modalRef = this.modalService.open(CategoriasComponent, { size: 'xl' });
     
   }
 

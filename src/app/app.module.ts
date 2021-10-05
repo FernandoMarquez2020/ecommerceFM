@@ -16,6 +16,11 @@ import { NuevaMercaderiaComponent } from './abms/mercaderia/nueva-mercaderia/nue
 import { CarritoComponent } from './compra/carrito/carrito.component';
 import { FormularioCompraComponent } from './compra/formulario-compra/formulario-compra.component';
 import { OrdenAprobadaComponent } from './compra/orden-aprobada/orden-aprobada.component';
+import { CategoriasComponent } from './productos/categorias/categorias.component';
+import { InicioComponent } from './menus/inicio/inicio.component';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { MapsComponent } from './componentes/maps/maps.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,12 +36,20 @@ import { OrdenAprobadaComponent } from './compra/orden-aprobada/orden-aprobada.c
     NuevaMercaderiaComponent,
     CarritoComponent,
     FormularioCompraComponent,
-    OrdenAprobadaComponent
+    OrdenAprobadaComponent,
+    CategoriasComponent,
+    InicioComponent,
+    MapsComponent,
+    
+    
+       
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,6 +21,7 @@ import { InicioComponent } from './menus/inicio/inicio.component';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MapsComponent } from './componentes/maps/maps.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     NgbModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

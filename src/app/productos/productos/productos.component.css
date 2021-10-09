@@ -29,11 +29,11 @@ box-shadow:
 
 .card {
     position: relative;
-    display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
     min-width: 300px;
+    height: auto;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
@@ -55,7 +55,8 @@ box-shadow:
 }
 
 .card-img-actions {
-    position: relative
+    position: relative;
+ 
 }
 
 .card-body {
@@ -67,7 +68,8 @@ box-shadow:
 }
 
 .card-img {
-    width: 350px
+    width: 280px;
+    height: 180px;
 }
 
 .star {

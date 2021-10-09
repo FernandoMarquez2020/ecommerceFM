@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-top: 0px;">
+<div class="navfull">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: -2px;">
   <div class="container-fluid">
     <a href=""><img src="./assets/ferrtechb.png" alt="FerrTech" style="height: 55px; margin-right: 20px;"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,10 +17,10 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Productos <i class="bi bi-tags"></i></a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Categorias</a></li>
+            <li><a routerLink="/productos/categorias"class="dropdown-item" href="#">Categorias</a></li>
             <li><a routerLink="/compra/carrito" class="dropdown-item" href="#">Ofertas<i class="bi bi-stars"></i></a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" routerLink="/productos/productos">Todos los productos</a></li>
+            <li><a class="dropdown-item" routerLink="/productos/listado-productos">Todos los productos</a></li>
           </ul>
         </li>
         
@@ -27,7 +28,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                    <i class="bi bi-tools"></i></a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Mercaderia</a></li>
+            <li><a routerLink="/mercaderia"class="dropdown-item" href="#">Mercaderia</a></li>
             <li><a class="dropdown-item" href="#">Clientes</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Reportes</a></li>
@@ -35,11 +36,11 @@
         </li>
        
       </ul>
-      <form class="d-flex">
+      <!-- <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
         <button class="btn btn-outline-warning" type="submit">Buscar</button>
         
-      </form>
+      </form> -->
       
       <div class="btn-group" role="group" aria-label="Button group with nested dropdown" style="margin-left: 10px; margin-right: 0px; margin-top: 2px;">
         
@@ -47,7 +48,7 @@
           <a href="#!" class="nav-link navbar-link-2 waves-effect">
          
         </a>
-          <button [routerLink]="['/compra/carrito']" class="btn btn-outline-warning" type="submit" style="align-items: center; border-radius: 20px; "><i class="bi bi-cart3"><span class="badge badge-pill red" style="color: red;">3</span>
+          <button routerLink="/compra/carrito" class="btn btn-outline-warning" type="submit" style="align-items: center; border-radius: 20px; "><i class="bi bi-cart3"><span class="badge badge-pill red" style="color: red;">3</span>
             </i></button>
         </form>
         
@@ -75,8 +76,26 @@
 <!-- <div class="navdown">
  <img class="imgnav" src="./assets/ft1.png"> 
 </div> -->
-
-
+<div class="html2">
+<div class="nav2">
+  <ul>
+    <li>
+      <a href="#">Inicio</a>
+    </li>
+    <li>
+      <a href="#">Menu</a>
+    </li>
+    <li>
+      <a href="#">Productos</a>
+    </li>
+    <li>
+      <a href="#">Contacto</a>
+    </li>
+  </ul>
+</div>
+</div>
+</div>
+<!-- ------- -->
 
 
 

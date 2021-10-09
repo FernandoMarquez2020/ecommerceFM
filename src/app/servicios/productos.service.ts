@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable, Input } from '@angular/core';
 
 
@@ -5,9 +6,27 @@ import { Injectable, Input } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductosService {
-  @Input() productos:any;
-  @Input() caller:any;
-  constructor() { }
+  url = "http://localhost:3000/productos";
+  constructor(private _http: HttpClient) { }
+
+  getProductos(){
+    return this._http.get(this.url);
+  }
+
+  postProductos(productos:any){
+    return this._http.post(this.url,productos);
+  }
+
+  deleteProductos(id:number){
+    return this._http.delete(this.url+"/"+id);
+  }
+
+  putProductos(productos:any){
+    return this._http.put(this.url+"/"+productos.id,productos);
+  }
+
+  getById(id:number){
+    return this._http.get(this.url + "/" + id);
+  }
+
 }
-
-

@@ -21,3 +21,54 @@
   width: 250px;
   right: 9%;
 }
+/* ------- */
+/* .navbar {
+  margin: 0;
+} */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.html2 {
+  height:50px;
+  background-image: linear-gradient(to right top, orange 30%, rgb(41, 39, 39) 70%);
+  align-content: center;
+  margin-top: 0px;
+}
+
+.nav2 {
+  /* max-width: 1024px; */
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0;
+ /* padding-top: 60px; */
+  justify-content: center;
+  align-content: center;
+}
+
+.nav2 ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  justify-content: center;
+}
+
+.nav2 ul li {
+  display: inline-block;
+  justify-content: center;
+}
+
+.nav2 ul li a {
+  padding: 12px;
+  /* font-family: "Open Sans"; */
+  font: bold;
+  text-transform:uppercase;
+  color: rgba(15, 15, 16, 0.5);
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+  align-items: center;
+}
+
+.nav2 ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(30, 30, 31, 0.7);
+}

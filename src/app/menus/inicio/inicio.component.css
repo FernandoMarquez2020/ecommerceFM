@@ -6,9 +6,11 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
-  h5 {
     color: white;
-    border: 2px;
-    border-color: rgb(233, 178, 51);
+    text-shadow: 0.2em 0.2em 0.3em black;
+    -webkit-text-stroke: 0.5px black;
+   
+  }
+  .row{
+    margin: 0 !important;
   }

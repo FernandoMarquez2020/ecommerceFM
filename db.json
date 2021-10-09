@@ -1,19 +1,69 @@
 {
-  "posts": [
+  "productos": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "codigo": "cl001",
+      "nombre": "Toshiba Notebook with 500GB HDD & 8GB RAM",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, veritatis asperiores magni quaerat blanditiis, dolore soluta sapiente suscipit reprehenderit unde recusandae tempora, rem sunt voluptatem quas quisquam laborum adipisci facilis.",
+      "precio": 300,
+      "disponible": true,
+      "oferta": true,
+      "marca": "Toshiba",
+      "categoria": "Laptops & Notebooks",
+      "imagenUrl": "https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png",
+      "stock": true
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "codigo": "cl001",
+      "nombre": "Toshiba Notebook with 500GB SSD & 16GB RAM",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, veritatis asperiores magni quaerat blanditiis, dolore soluta sapiente suscipit reprehenderit unde recusandae tempora, rem sunt voluptatem quas quisquam laborum adipisci facilis.",
+      "precio": 450,
+      "disponible": true,
+      "oferta": true,
+      "marca": "Toshiba",
+      "categoria": "Laptops & Notebooks",
+      "imagenUrl": "https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png",
+      "stock": true
+    },
+    {
+      "id": 3,
+      "codigo": "cl003",
+      "nombre": "MILWAUKEE'S 2997-22 Kit de Taladro de Impacto",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, veritatis asperiores magni quaerat blanditiis, dolore soluta sapiente suscipit reprehenderit unde recusandae tempora, rem sunt voluptatem quas quisquam laborum adipisci facilis.",
+      "precio": 250,
+      "disponible": true,
+      "oferta": true,
+      "marca": "MILWAUKEE'S",
+      "categoria": "Herramientas",
+      "imagenUrl": "https://m.media-amazon.com/images/I/81d+unAjzCL._AC_UL640_FMwebp_QL65_.jpg",
+      "stock": true
+    },
+    {
+      "id": 4,
+      "codigo": "cl001",
+      "nombre": "Toshiba Notebook with 500GB SSD & 16GB RAM",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, veritatis asperiores magni quaerat blanditiis, dolore soluta sapiente suscipit reprehenderit unde recusandae tempora, rem sunt voluptatem quas quisquam laborum adipisci facilis.",
+      "precio": 450,
+      "disponible": true,
+      "oferta": true,
+      "marca": "Toshiba",
+      "categoria": "Laptops & Notebooks",
+      "imagenUrl": "https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png",
+      "stock": true
+    },
+    {
+      "id": 5,
+      "codigo": "cl003",
+      "nombre": "MILWAUKEE'S 2997-22 Kit de Taladro de Impacto",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, veritatis asperiores magni quaerat blanditiis, dolore soluta sapiente suscipit reprehenderit unde recusandae tempora, rem sunt voluptatem quas quisquam laborum adipisci facilis.",
+      "precio": 250,
+      "disponible": true,
+      "oferta": true,
+      "marca": "MILWAUKEE'S",
+      "categoria": "Herramientas",
+      "imagenUrl": "https://m.media-amazon.com/images/I/81d+unAjzCL._AC_UL640_FMwebp_QL65_.jpg",
+      "stock": true
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

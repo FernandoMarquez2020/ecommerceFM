@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MercaderiaService } from './mercaderia.service';
+import { ProductosService } from 'src/app/servicios/productos.service';
 
 
 @Component({
@@ -10,15 +10,34 @@ import { MercaderiaService } from './mercaderia.service';
 export class ListadoProductosComponent implements OnInit {
 
 
-  mercaderias: any;
-  constructor(private _productosService: MercaderiaService) { }
+  productos: any;
+  cd: any;
+  constructor(private _productosService: ProductosService) { }
   
 
+ 
+  producto:any;
+  termino = "";
+  backup:any;
   ngOnInit(): void {
-    
     this._productosService.getProductos().subscribe((response: any) => {
-      this.mercaderias = response;
+      this.backup = response
+      this.productos = response;
     });
+      this.cd.detectChanges();
+    
+  } 
+  filtrar(){
+    let newProductos = this.backup.filter((producto:any) => {
+      return producto.nombre.toLowerCase().includes(this.termino.toLowerCase()) === true
+    });
+    this.productos = newProductos;
   }
+
+  // handlerInput(event){
+  //   if(event.target.value.length === 0){
+  //     this.productos = this.backup;
+  //   }
+  // }
 
 }

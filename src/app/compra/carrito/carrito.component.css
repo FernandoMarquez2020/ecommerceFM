@@ -135,7 +135,7 @@ input:focus::-webkit-input-placeholder {
     color: transparent
 }
 
-.btn {
+/* .btn {
     background-color: #000;
     border-color: #000;
     color: white;
@@ -154,6 +154,15 @@ input:focus::-webkit-input-placeholder {
     -webkit-box-shadow: none;
     -webkit-user-select: none;
     transition: none
+} */
+.btn{background-color: #ff8d1e; color:#fff;width: 100%;
+    font-size: 0.7rem;
+    margin-top: 4vh;
+    padding: 1vh;
+    border-radius: 5px}
+.btn:hover, .btn:focus, .btn.active {
+    background: #4b92dc;
+    color: #fff;
 }
 
 .btn:hover {

@@ -1,1 +1,141 @@
-<p>nueva-mercaderia works!</p>
+<header class="bg-warning text-white">
+    
+    <div class="showcase p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col pt-5 pr-5">
+            <a href=""><img src="./assets/ferrtechb.png" alt="FerrTech" style="height:100px;"></a>
+            <h1 class="display-4 pt-5 pb-3">Ingreso o modificación<br> de mercaderia</h1>
+          </div>
+          <!-- toast -->
+         
+          <app-toast aria-live="polite" aria-atomic="true"></app-toast>
+<div class="row" style="display: flex;flex-direction: row;justify-content: flex-end;">
+    <div class="toast {{showToast}}" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <img src="" class="rounded me-2" alt="">
+            <strong class="me-auto">Aviso:</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            {{message}}
+        </div>
+    </div>
+</div>
+
+<!-- toast end -->
+          <div class="col">
+            <form class="bg-light p-5 text-dark rounded">
+            
+
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input (input)="handleNombreInput($event)" name="nombre"  [(ngModel)]="productos.nombre"  class="form-control" type="text" id="" placeholder="Ingrese el codigo de referencia">
+              </div>
+
+              <div class="form-group">
+                <label for="descripcion">Descripcion</label>
+                <input (input)="handleDescripcionInput($event)" name="descropcion"[(ngModel)]="productos.descripcion"class="form-control" type="text" id="" placeholder="Detalle del producto">
+              </div>
+                <div style="display: flex; justify-content: space-between;">
+              <div class="form-group col-6">
+                <label for="precio">Precio</label>
+                <input (input)="handlePrecioInput($event)"name="precio"[(ngModel)]="productos.precio"class="form-control" type="number" id="" placeholder="Precio en dolares">
+             </div>
+
+             <div class="form-group col-5" >
+              <label for="codigo">Codigo</label>
+              <input (input)="handleCodigoInput($event)" name="codigo"[(ngModel)]="productos.codigo"class="form-control" type="text" id="" placeholder="Codigo del producto">
+            </div>
+            </div>
+              
+              
+              <div class="form-group">
+                <label for="marca">Marca</label>
+                <input (input)="handleMarcaInput($event)"name="marca"[(ngModel)]="productos.marca"class="form-control" type="text" id="" placeholder="Ingrese la marca">
+              </div>
+              
+              <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <input (input)="handleCategoriaInput($event)"name="categoria"[(ngModel)]="productos.categoria" class="form-control" type="text" id="" placeholder="Ingrese la categoria">
+              </div>
+              
+              <div class="form-group">
+                <label for="imagen">Imagen</label>
+                <input (input)="handleImagenInput($event)"name="imagenUrl"[(ngModel)]="productos.imagenUrl" class="form-control" type="url" id="" placeholder="Ingrese la Url de la imagen del producto">
+              </div>
+
+              <div style="display: flex; justify-content: space-between;align-items: center;">
+              <div class="form-group col-6">
+                <label for="stock">Stock</label>
+                <input (input)="handleStockInput($event)"name="stock"[(ngModel)]="productos.stock" class="form-control" type="number" id="" placeholder="Ingrese stock">
+              </div>
+              <div class="form-group col-5">
+                <label for="oferta">Oferta</label>
+                <input name="oferta"[(ngModel)]="productos.oferta"class="checkbox" type="checkbox" id="" >
+              </div>
+            </div>
+
+
+
+
+              <br>
+              <button (click)="guardar()"class="btn btn-warning btn-block" type="submit">Ingresar</button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="volver">
+      <a routerLink="/mercaderia" style="margin:10px"><i class="bi bi-arrow-left-circle"></i>Volver</a>
+  
+    </div>
+  </header>
+  
+  <!-- <section class="pt-1 pb-3">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-5 p-5">Creative & flexible <br> Bootstrap UI Kit</h1>
+        </div>
+        <div class="col p-5">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat nisi soluta quis ipsa nihil, consectetur cupiditate dolores ad expedita distinctio quisquam repellat voluptas exercitationem perferendis aliquid? Veritatis, ad.</p>
+        </div>
+      </div>
+      <div class="row pt-3">
+        <div class="col">
+          <div class="row">
+            <div class="col-md-2 col-sm-2">
+              <i class="fas fa-handshake fa-2x"></i>
+            </div>
+            <div class="col-md-10 col-sm-10">
+              <h4>Bootstrap 4</h4>
+              <p  class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum impedit, aut, eum quia itaque perspiciatis rem cum repellat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col-md-2 col-sm-2">
+              <i class="fas fa-mobile fa-2x"></i>
+            </div>
+            <div class="col-md-10 col-sm-10">
+              <h4>Mobile Friendly</h4>
+              <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum impedit, aut, eum quia itaque perspiciatis rem cum repellat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col-md-2 col-sm-2">
+              <i class="fas fa-comments fa-2x"></i>
+            </div>
+            <div class="col-md-10 col-sm-10">
+              <h4>Support</h4>
+              <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum impedit, aut, eum quia itaque perspiciatis rem cum repellat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->

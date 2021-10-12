@@ -63,7 +63,20 @@
       "marca": "MILWAUKEE'S",
       "categoria": "Herramientas",
       "imagenUrl": "https://m.media-amazon.com/images/I/81d+unAjzCL._AC_UL640_FMwebp_QL65_.jpg",
-      "stock": true
+      "stock": 2
+    },
+    {
+      "id": 6,
+      "codigo": "c00ps5",
+      "nombre": "PS5",
+      "descripcion": "Playsation 5",
+      "precio": 450,
+      "disponible": true,
+      "oferta": true,
+      "marca": "Sony",
+      "categoria": "Videojuegos",
+      "imagenUrl": "https://m.media-amazon.com/images/I/51lVhQLZn+L._AC_UY436_FMwebp_QL65_.jpg",
+      "stock": 7
     }
   ]
 }

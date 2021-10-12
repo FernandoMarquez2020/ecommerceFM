@@ -2,17 +2,17 @@
     <div class="col-6">
         <form class="d-flex">
             <h4>Gestion - Productos</h4>
-            <a  class="btn btn-outline-primary" style="margin-left: 10px;" type="submit">Nuevo</a>
+            <a (click)="openLg()" class="btn btn-outline-primary" style="margin-left: 10px;" type="submit">Nuevo</a>
         </form>
     </div>
 </div>
 
 <br>
 <div class="row">
-    <div class="col-6">
+    <div class="col-12">
         <form class="d-flex">
-            <!-- <input autocomplete="off" (input)="handlerInput($event)" class="form-control me-2" name="termino" [(ngModel)]="termino" type="search" placeholder="Search" aria-label="Search"> -->
-            <button class="btn btn-outline-success" (click)="filtrar()" type="button">Search</button>
+            <input autocomplete="off"  class="form-control me-2" name="termino" [(ngModel)]="termino" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-warning" (click)="filtrar()" type="button">Search</button>
         </form>
     </div>
 </div>
@@ -38,8 +38,9 @@
                 <td>{{producto.precio}}</td>
                 <td>{{producto.disponible ? "Si": "No"}}</td>
                 <td>{{producto.categoria}}</td>
-                <td><a class="btn btn-primary" [routerLink]="['/gestion/nuevo-producto',producto.id]" style="margin-right:4px">Editar</a><a (click)="eliminarProducto(producto.id)" class="btn btn-danger">Eliminar</a></td>
+                <td><a class="btn btn-primary" (click)="open2(producto)" style="margin-right:4px">Editar</a><a (click)="eliminarProducto(producto.id)" class="btn btn-danger">Eliminar</a></td>
             </tr>
+
         </tbody>
     </table>
 </div>

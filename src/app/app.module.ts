@@ -22,6 +22,8 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MapsComponent } from './componentes/maps/maps.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ToastComponent } from './componentes/toast/toast.component';
+import { DetalleProductosComponent } from './productos/detalle-productos/detalle-productos.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { FormsModule } from '@angular/forms';
     CategoriasComponent,
     InicioComponent,
     MapsComponent,
+    ToastComponent,
+    DetalleProductosComponent,
     
     
        

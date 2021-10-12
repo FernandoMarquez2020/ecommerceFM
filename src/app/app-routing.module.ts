@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListadoMercaderiaComponent } from './abms/mercaderia/listado-mercaderia/listado-mercaderia.component';
+import { NuevaMercaderiaComponent } from './abms/mercaderia/nueva-mercaderia/nueva-mercaderia.component';
 import { CarritoComponent } from './compra/carrito/carrito.component';
 import { InicioComponent } from './menus/inicio/inicio.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CategoriasComponent } from './productos/categorias/categorias.component';
+import { DetalleProductosComponent } from './productos/detalle-productos/detalle-productos.component';
 import { ListadoProductosComponent } from './productos/listado-productos/listado-productos.component';
 import { ProductosComponent } from './productos/productos/productos.component';
 
@@ -24,6 +26,12 @@ const routes: Routes = [
   },
   {  
     path:"mercaderia",component:ListadoMercaderiaComponent
+  },
+  {  
+    path:"nueva-mercaderia",component:NuevaMercaderiaComponent
+  },
+  {  
+    path:"detalle",component:DetalleProductosComponent
   },
 
   {

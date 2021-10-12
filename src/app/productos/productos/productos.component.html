@@ -5,11 +5,11 @@
             <div class="grow">
             <div class="card">
                 <div class="card-body">
-                    <div class="card-img-actions"> <img [src]="productos.imagenUrl" class="card-img img-fluid"  alt=""> </div>
+                    <div class="card-img-actions"> <img routerLink="/detalle"[src]="productos.imagenUrl" class="card-img img-fluid"  alt=""> </div>
                 </div>
                 <div class="card-body bg-light text-center">
                     <div class="mb-2">
-                        <h6 class="font-weight-semibold mb-2"> <a href="#" class="text-default mb-2" data-abc="true">{{productos.nombre}}</a> </h6> <a href="#" class="text-muted" data-abc="true">{{productos.categoria}}</a>
+                        <h6 class="font-weight-semibold mb-2"> <a routerLink="/detalle"href="#" class="text-default mb-2" data-abc="true">{{productos.nombre}}</a> </h6> <a href="#" class="text-muted" data-abc="true">{{productos.categoria}}</a>
                     </div>
                     
                     <h3 class="mb-0 font-weight-semibold">{{productos.precio}}</h3>

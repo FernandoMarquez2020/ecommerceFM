@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductosService } from 'src/app/servicios/productos.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import { NuevaMercaderiaComponent } from '../nueva-mercaderia/nueva-mercaderia.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-listado-mercaderia',
@@ -9,22 +11,20 @@ import Swal from 'sweetalert2'
 })
 export class ListadoMercaderiaComponent implements OnInit {
   cd: any;
+  @Input() producto: any;
+  nuevo: any;
+
+  constructor(private _productosService:ProductosService,private modalService: NgbModal) {}
   
-
-  constructor(private _productosService:ProductosService) {}
-
   productos:any;
   termino = "";
   backup:any;
   ngOnInit(): void {
-    this._productosService.getProductos().subscribe(data => {
+    this._productosService.getProductos().subscribe((data: any) => {
       this.productos = data;
-      this.cd.detectChanges();
       this.backup = this.productos;
-      
-     
-     
     });
+    
   }
   eliminarProducto(id: number){
 
@@ -49,8 +49,7 @@ export class ListadoMercaderiaComponent implements OnInit {
           );
         });
 
-      // For more information about handling dismissals please visit
-      // https://sweetalert2.github.io/#handling-dismissals
+   
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           'Cancelado',
@@ -62,18 +61,35 @@ export class ListadoMercaderiaComponent implements OnInit {
   }
 
   filtrar(){
-    let newProductos = this.productos.filter((productos: { nombre: string; }) => {
-      return productos.nombre.toLowerCase().includes(this.termino.toLowerCase()) === true
+    let newProductos = this.backup.filter((producto:any) => {
+      return producto.nombre.toLowerCase().includes(this.termino.toLowerCase()) === true
     });
     this.productos = newProductos;
   }
 
-  handlerInput(event: { target: { value: string | any[]; }; }){
-    if(event.target.value.length === 0){
-      this.productos = this.backup;
-    }
-  }
+  // handlerInput(event: { target: { value: string | any[]; }; }){
+  //   if(event.target.value.length === 0){
+  //     this.productos = this.backup;
+  //   }
+  // }
+
+
+openLg() {
+  const modalRef = this.modalService.open(NuevaMercaderiaComponent, { size: 'lg' });
+  modalRef.result.then((item: any) => {
+    this.productos.push(item)
+  })
+   
+
+}
+open2(producto: any) {
+  const modalRef = this.modalService.open(NuevaMercaderiaComponent, { size: 'lg' });
+  
+  modalRef.componentInstance.productos= producto;
+  modalRef.result.then(item => {
+    console.log(item);
+    
+  })
 }
 
-
-
+}

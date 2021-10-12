@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from 'src/app/servicios/productos.service';
+import { DetalleProductosComponent } from '../detalle-productos/detalle-productos.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -12,7 +14,8 @@ export class ListadoProductosComponent implements OnInit {
 
   productos: any;
   cd: any;
-  constructor(private _productosService: ProductosService) { }
+ 
+  constructor(private _productosService: ProductosService,private modalService: NgbModal ){ }
   
 
  
@@ -34,10 +37,13 @@ export class ListadoProductosComponent implements OnInit {
     this.productos = newProductos;
   }
 
+
+
   // handlerInput(event){
   //   if(event.target.value.length === 0){
   //     this.productos = this.backup;
   //   }
   // }
+
 
 }

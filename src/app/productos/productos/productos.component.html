@@ -1,25 +1,33 @@
-<div class="container d-flex justify-content-center mt-50 mb-50">
+<div class="container d-flex justify-content-center mt-50 mb-50" style="margin: 10px;">
     <div class="row">
         
         <div class="col-md-4 mt-2">
             <div class="grow">
             <div class="card">
                 <div class="card-body">
-                    <div class="card-img-actions"> <img routerLink="/detalle"[src]="productos.imagenUrl" class="card-img img-fluid"  alt=""> </div>
+                    <div class="card-img-actions"> <img [src]="productos.imagenUrl" class="card-img img-fluid"  alt=""> </div>
+
+                    <ng-template #popContent>{{productos.descripcion}}</ng-template>
+<ng-template #popTitle><b>{{productos.nombre}}</b></ng-template>
+<button type="button" class="btn btn-outline-secondary" [ngbPopover]="popContent" [popoverTitle]="popTitle">
+  Detalles
+</button>
+
                 </div>
                 <div class="card-body bg-light text-center">
                     <div class="mb-2">
-                        <h6 class="font-weight-semibold mb-2"> <a routerLink="/detalle"href="#" class="text-default mb-2" data-abc="true">{{productos.nombre}}</a> </h6> <a href="#" class="text-muted" data-abc="true">{{productos.categoria}}</a>
+                        <h6 class="font-weight-semibold mb-2"> <a  class="text-default mb-2" [ngbPopover]="popContent" [popoverTitle]="popTitle"data-abc="true">{{productos.nombre}}</a> </h6> <a href="#" class="text-muted" data-abc="true">{{productos.categoria}}</a>
                     </div>
                     
-                    <h3 class="mb-0 font-weight-semibold">{{productos.precio}}</h3>
+                    <h3 class="mb-0 font-weight-semibold">U$S {{productos.precio}}</h3>
                     <div> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> <i class="fa fa-star star"></i> </div>
                     <div class="text-muted mb-3">
                     
                         <div class="card-body" *ngIf="caller === 'listado'">
 
-                        <button type="button" class="btn btn-outline-success" style="margin: 5px;"><i class="bi bi-bag-check"></i> Comprar</button>
-                        <button type="button" class="btn btn-outline-warning" style="margin: 5px;"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
+                        <button (click)="addCart(productos)" routerLink="/compra/carrito"type="button" class="btn btn-outline-success" style="margin: 5px;"><i class="bi bi-bag-check"></i> Comprar</button>
+                        <button (click)="addCart(productos)"type="button" class="btn btn-outline-warning" style="margin: 5px;"><i class="bi bi-cart-plus"></i> Agregar</button>
+                       
                     </div> 
                     </div>
             </div>

@@ -1,6 +1,6 @@
 <div class="row" >
     <div class="col-12">
-        <form class="d-flex"style="width: 60%; display:flex; justify-content: center;">
+        <form class="d-flex"style="width: 60%; display:flex; margin-top:10px; justify-content: center;">
             <input autocomplete="off"  class="form-control me-2" name="termino" [(ngModel)]="termino" type="search" placeholder="Buscar productos..." aria-label="Search">
             <button class="btn btn-warning" (click)="filtrar()" type="button">Buscar</button>
             
@@ -9,7 +9,7 @@
 </div>
 <br>
 <div class="row">
-    <div class="col-4" *ngFor="let producto of productos">
+    <div class="col-lg-4" *ngFor="let producto of productos">
         <app-productos [caller]="'listado'" [productos]="producto"></app-productos>
     </div>
 </div>

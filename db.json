@@ -68,7 +68,7 @@
     {
       "id": 6,
       "codigo": "c00ps5",
-      "nombre": "PS5",
+      "nombre": "PS5 - Playsation 5. Consola con 2 juegos y 2 mandos ",
       "descripcion": "Playsation 5",
       "precio": 450,
       "disponible": true,
@@ -76,7 +76,33 @@
       "marca": "Sony",
       "categoria": "Videojuegos",
       "imagenUrl": "https://m.media-amazon.com/images/I/51lVhQLZn+L._AC_UY436_FMwebp_QL65_.jpg",
-      "stock": 7
+      "stock": 8
+    },
+    {
+      "id": 7,
+      "codigo": "mic001",
+      "nombre": "Nostalgia Retro - Horno de microondas para superficie grande",
+      "descripcion": "800 vatios de potencia de cocción: con 0,9 pies cúbicos, este microondas proporciona la potencia de cocción necesaria para cocinar y recalentar rápidamente los alimentos. Ajustes de cocción personalizables: 12 ajustes de cocción preprogramados y temporizador de retardo proporcionan opciones para el calentamiento óptimo de alimentos populares como palomitas, pizza, patatas, verduras y más. Reloj digital – Pantalla LED fácil de leer que ilumina el reloj digital y resalta cada configuración de cocción. Incluso cocinar - El carrusel giratorio de vidrio ayuda a cocinar alimentos de manera uniforme Esfera de programa sencilla: navega fácilmente por los ajustes de cocción con el sencillo dial de programa de giro y pulsación.",
+      "precio": 150,
+      "disponible": true,
+      "oferta": false,
+      "marca": "Nostalgia",
+      "categoria": "Electrodomesticos",
+      "imagenUrl": "https://m.media-amazon.com/images/I/81c9QeoOJkL._AC_UY218_.jpg",
+      "stock": 10
+    },
+    {
+      "id": 8,
+      "codigo": "caf0001",
+      "nombre": "Nostalgia RCOF12RR New & Improved 12-Cup Programmable Coffee Maker with LED Display",
+      "descripcion": "12-CUP CAPACITY: Brews up to 12-cups of coffee at a time, making it ideal for everyday use and entertaining PROGRAMMABLE: The programmable 24-hour clock and delay timer allows you to schedule your brewing so you can have hot coffee when you wake up PAUSE & SERVE: Need your coffee ASAP? The Pause & Serve feature lets you pour a cup while coffee is still brewing BOIL DRY PROTECTION: The two-hour automatic shut-off is built in for safety incase you forgot to turn your coffee pot off KEEP WARM: After the coffee is finished brewing, the automatic keep-warm function will keep your coffee warm for two hours SIMPLE CONTROLS: There are three controls - On/Off, Program and Hour/Minute. The backlit LED display makes controls easy to read ANTI-DRIP: The included carafe has anti-drip design so you avoid any messes when pouring coffee",
+      "precio": 99,
+      "disponible": true,
+      "oferta": false,
+      "marca": "Nostalgia",
+      "categoria": "Electrodomesticos",
+      "imagenUrl": "https://images-na.ssl-images-amazon.com/images/I/81EF0y80KxL._AC_UL160_SR160,160_.jpg",
+      "stock": 6
     }
   ]
 }

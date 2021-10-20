@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './abms/clientes/usuarios/login/login.component';
+import { RegisterComponent } from './abms/clientes/usuarios/register/register.component';
 import { ListadoMercaderiaComponent } from './abms/mercaderia/listado-mercaderia/listado-mercaderia.component';
 import { NuevaMercaderiaComponent } from './abms/mercaderia/nueva-mercaderia/nueva-mercaderia.component';
 import { CarritoComponent } from './compra/carrito/carrito.component';
+import { OrdenAprobadaComponent } from './compra/orden-aprobada/orden-aprobada.component';
 import { InicioComponent } from './menus/inicio/inicio.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CategoriasComponent } from './productos/categorias/categorias.component';
@@ -20,6 +23,9 @@ const routes: Routes = [
   },
   {  
     path:"compra/carrito",component:CarritoComponent
+  },
+  {  
+    path:"compra/orden-aprobada",component:OrdenAprobadaComponent
   },
   {  
     path:"productos/categorias",component:CategoriasComponent
@@ -40,6 +46,12 @@ const routes: Routes = [
   {  
     path:"**",component:NotFoundComponent
   },
+  { 
+    path:"login",component:LoginComponent
+  },
+  { 
+    path:"register",component:RegisterComponent
+  }
 
 
 

@@ -32,7 +32,7 @@ box-shadow:
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    min-width: 300px;
+    min-width: 330px;
     height: auto;
     word-wrap: break-word;
     background-color: #fff;

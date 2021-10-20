@@ -26,8 +26,9 @@ export class ListadoProductosComponent implements OnInit {
     this._productosService.getProductos().subscribe((response: any) => {
       this.backup = response
       this.productos = response;
+      // this.cd.detectChanges();
     });
-      this.cd.detectChanges();
+      
     
   } 
   filtrar(){

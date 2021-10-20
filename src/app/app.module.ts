@@ -24,6 +24,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ToastComponent } from './componentes/toast/toast.component';
 import { DetalleProductosComponent } from './productos/detalle-productos/detalle-productos.component';
+import { ContactoComponent } from './menus/contacto/contacto.component';
+import { EmpresaComponent } from './menus/empresa/empresa.component';
+import { UsuariosComponent } from './abms/clientes/usuarios/usuarios.component';
+import { LoginComponent } from './abms/clientes/usuarios/login/login.component';
+import { RegisterComponent } from './abms/clientes/usuarios/register/register.component';
+import { CookieService } from "ngx-cookie-service";
 
 @NgModule({
   declarations: [
@@ -45,6 +51,11 @@ import { DetalleProductosComponent } from './productos/detalle-productos/detalle
     MapsComponent,
     ToastComponent,
     DetalleProductosComponent,
+    ContactoComponent,
+    EmpresaComponent,
+    UsuariosComponent,
+    LoginComponent,
+    RegisterComponent,
     
     
        
@@ -55,9 +66,10 @@ import { DetalleProductosComponent } from './productos/detalle-productos/detalle
     NgbModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

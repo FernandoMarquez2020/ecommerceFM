@@ -1,69 +1,255 @@
-<div class="card">
-    <div class="row">
-        <div class="col-md-8 cart">
-            <div class="title">
-                <div class="row">
-                    <div class="col">
-                        <h4><b>Mi Carrito</b></h4>
-                    </div>
-                    <div class="col align-self-center text-right text-muted">Cantidad - 3</div>
-                </div>
-            </div>
-            <div class="row border-top border-bottom">
-                <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png"></div>
-                    <div class="col">
-                        <div class="row text-muted">Laptops & Notebooks</div>
-                        <div class="row">Toshiba Notebook with 500GB HDD & 8GB RAM</div>
-                    </div>
-                    <div class="col"> <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a> </div>
-                    <div class="col">$ 300.00 <span class="close">&#10005;</span></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png"></div>
-                    <div class="col">
-                        <div class="row text-muted">Laptops & Notebooks</div>
-                        <div class="row">Toshiba Notebook with 500GB HDD & 8GB RAM</div>
-                    </div>
-                    <div class="col"> <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a> </div>
-                    <div class="col">$ 300.00 <span class="close">&#10005;</span></div>
-                </div>
-            </div>
-            <div class="row border-top border-bottom">
-                <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png"></div>
-                    <div class="col">
-                        <div class="row text-muted">Laptops & Notebooks</div>
-                        <div class="row">Toshiba Notebook with 500GB HDD & 8GB RAM</div>
-                    </div>
-                    <div class="col"> <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a> </div>
-                    <div class="col">$ 300.00 <span class="close">&#10005;</span></div>
-                </div>
-            </div>
-            <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Seguir comprando</span></div>
+<div class="wrapper mt-sm-5 bg-white">
+    <!-- <div class="progresses py-4">
+        <ul class="d-flex align-items-center justify-content-between">
+            <li id="step-1" class="blue"></li>
+            <li id="step-2" class="blue"></li>
+            <li id="step-3" class="blue"></li>
+        </ul>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        <div class="col-md-4 summary">
-            <div>
-                <h5><b>Compra</b></h5>
+    </div> -->
+    <div class="row">
+        <div class="col-lg-8 col-md-8 border-top border-end p-sm-4 p-2">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" *ngFor="let item of columnas">{{item}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let productos of cartProduct">
+                        <td><img [src]="productos.imagenUrl" width="50px" height="50px" alt=""></td>
+                        <td>{{productos.nombre}}</td>
+                        <td>
+                            <div style="display: flex;">
+                            <a (click)="plus(productos)" class="btn btn-danger"><i class="bi bi-plus"></i></a>
+                            <input type="text" [value]="productos.cantidad" style="width: 35px; margin: 2px 5px; text-align: center;">
+                            <a (click)="less(productos)" class="btn btn-danger"><i class="bi bi-file-minus"></i></a>
+                        </div>
+                        </td>
+                        <td>{{productos.codigo}}</td>
+                        <td><strong>{{productos.precio}} $</strong></td>
+                        <td><a class="btn btn-danger" (click)="deleteItem(productos)"><i class="bi bi-trash"></i></a></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <!-- <div id="total">
+                        <h6>Total: {{total}} $ </h6>
+                    </div> -->
+                </tfoot>
+            </table> 
+
+          
+
+        </div>
+        <div class="col-lg-4 col-md-4 border-top border-start p-sm-4 p-2" style="display:flex; align-items: flex-end;">
+            <div id="billing" >
+                <!-- <div class="form-group d-flex flex-fill"> <input type="text" placeholder="Promo code" class="flex-grow-1 bg-light"> <input type="submit" value="Apply" class="btn btn-dark"> </div>
+                <div class="d-flex align-items-center flex-fill my-1 mt-4" id="discount">
+                    <div class="bg-dark text-white w-50 border-0">Discount</div>
+                    <div class="amount text-center w-50 border">0 $</div>
+                </div> -->
+                <div class="row d-flex align-items-center flex-fill my-1" id="total">
+                    <div class=" bg-dark text-white w-50 border-0">Total</div>
+                    <div class=" amount text-center w-50 border" style="font-size: 15px;">U$S{{total}}</div>
+                </div>
+                <div class="d-flex justify-content-between text-center mt-4" id="btns">
+                    <div (click)="toggleShow()"class="btn btn-primary">{{continue}}</div>
+                    <div routerLink=""class="btn btn-default ms-2">Volver</div>
+                </div>
             </div>
-            <hr>
-            <div class="row">
-                <div class="col" style="padding-left:0;">Cantidad 3</div>
-                <div class="col text-right">$ 900.00</div>
-            </div>
-            <form>
-                <p>SHIPPING</p> <select>
-                    <option class="text-muted">Correo- $ 10.00</option>
-                    <option class="text-muted">Retira en local</option>
-                </select>
-                <!-- <p>GIVE CODE</p> <input id="code" placeholder="Enter your code"> -->
-            </form>
-            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                <div class="col">TOTAL</div>
-                <div class="col text-right">&dollar; 910.00</div>
-            </div> <button class="btn">Finalizar compra</button>
         </div>
     </div>
+</div>
+
+
+<!-- -------pago---------------------------------------------------------------- -->
+<br>
+<hr>
+<br>
+
+<div *ngIf="isShown"class="container ">
+       
+    <div class="row cart-body">
+        <form class="form-horizontal" method="post" action="">
+        <div class="col-lg-12">
+            <!--REVIEW ORDER-->
+            
+        
+            <!--SHIPPING METHOD-->
+            <div class="panel panel-info">
+                <div class="panel-heading" >Datos de la compra</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="panel-heading">Datos del envío</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8"><strong>Pais:</strong></div>
+                        <div class="col-md-8">
+                            <input type="text"  class="form-control" name="country" value="" autofocus/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8 col-xs-12">
+                            <strong>Nombre completo:</strong>
+                            <input type="text" name="first_name" class="form-control" value="" />
+                        </div>
+                        
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8"><strong>Dirección:</strong></div>
+                        <div class="col-md-8">
+                            <input type="text" name="address" class="form-control" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8"><strong>Ciudad:</strong></div>
+                        <div class="col-md-8">
+                            <input type="text" name="city" class="form-control" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8"><strong>Departamento:</strong></div>
+                        <div class="col-md-8">
+                            <input type="text" name="state" class="form-control" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8"><strong>Telefono:</strong></div>
+                        <div class="col-md-8"><input type="text" name="phone_number" class="form-control" value="" /></div>
+                    </div>
+                   
+                </div>
+            </div>
+            <!--SHIPPING METHOD END-->
+            <!--CREDIT CART PAYMENT-->
+            <hr>
+            <div class="panel-heading">Metodo de pago</div>
+            <div class="panel panel-info col-12" style="display: flex; width: 90%;">
+                
+                <div class="panel-body col-lg-6">
+                    <div class="form-group">
+                        <div class="col-md-12"><strong>Tarjeta:</strong></div>
+                        <div class="col-md-12">
+                            <select id="CreditCardType" name="CreditCardType" class="form-control">
+                                <option value="5">Visa</option>
+                                <option value="6">MasterCard</option>
+                                <option value="7">Pass Card</option>
+                                <option value="8">Oca</option>
+                                <option value="8">Amex</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12"><strong>Numero de tarjeta:</strong></div>
+                        <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12"><strong>CVV:</strong></div>
+                        <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="" /></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <strong>Vencimiento</strong>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control" name="">
+                                <option value="">Mes</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                        </select>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control" name="">
+                                <option value="">Año</option>
+                                
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <span>Pago seguro usando:</span>
+                        </div>
+                        <div class="col-md-12">
+                            <ul class="cards">
+                                <li class="visa hand">Visa</li>
+                                <li class="mastercard hand">MasterCard</li>
+                                <li class="amex hand">Amex</li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <button ((click)="executeBoth()" style="margin: 10px; padding: 10px;width: 200px;" type="submit" class="btn btn-success btn-submit-fix">FINALIZAR COMPRA</button>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="resumen col-lg-6" style="padding: 5px;">
+
+                    <table class="table" style="font-family: monospace, Consolas;">
+                        <thead style="font-size: 12px; font-family: Courier 'Courier New', Courier, monospace;">
+                            <p style="text-align: center;">RESUMEN FACTURA</p>
+                        </thead>
+                        <thead style="font-size: 12px;font-family: Courier 'Courier New', Courier, monospace;">
+                            <tr>
+                                <th scope="col" *ngFor="let item of resumenList">{{item}}</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr *ngFor="let productos of cartProduct" style="font-family: monospace, Consolas;font-size: 10px;">
+                                
+                                <td>{{productos.nombre}}</td>
+                                <td>
+                                    <div style="display: flex;">
+                                   
+                                    <input type="text" [value]="productos.cantidad" style="width: 35px; margin: 2px 5px; text-align: center; border: 0px;" readonly>
+                                    
+                                </div>
+                                </td>
+                                <td>{{productos.codigo}}</td>
+                                <td><strong>U$S {{productos.precio}}</strong></td>
+                                
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            
+                        </tfoot>
+                    </table> 
+                    <br>
+                    <br>
+                    <div class="col-12" style="text-align:right;font-family: monospace, Consolas;font-size: 12px;padding-right: 5px;">
+                        <h6>Total: U$S {{total}} </h6>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </form>
 </div>

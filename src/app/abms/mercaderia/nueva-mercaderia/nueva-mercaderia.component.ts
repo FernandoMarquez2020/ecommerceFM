@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductosService } from 'src/app/servicios/productos.service';
 import { ToastService } from 'src/app/componentes/toast.service';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -47,6 +48,7 @@ message = "";
     private toastService: ToastService,
     private route: ActivatedRoute,
     private _router: Router,
+    private activeModal: NgbActiveModal
     ) { }
 
   ngOnInit(): void {
@@ -68,16 +70,15 @@ message = "";
       if(this.productos.id === 0){
         this._productosService.postProductos(this.productos).subscribe(response=>{
           this.cleanForm();
-          console.log("!!nuevo!!!",response);
           this.toastService.show('El producto se inserto correctamente', { classname: 'bg-success text-light', delay: 5000 });
-         
+          this.activeModal.close(response)
         });
       }
       else{
         this._productosService.putProductos(this.productos).subscribe(response=>{
           this.cleanForm();
-          console.log("!!modificado!!!",response);
           this.toastService.show('El producto se modifico correctamente', { classname: 'bg-success text-light', delay: 5000 });
+          this.activeModal.close(response)
         });
       }
       this.showToast = "show";

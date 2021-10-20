@@ -1,0 +1,15 @@
+.gracias {
+    background-image: url("http://d3ugyf2ht6aenh.cloudfront.net/stores/083/034/products/sello-suelto-md-gracias-por-tu-compra1-6d862328db3c53302916016678087676-640-0.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 500px;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    display:list-item;
+    
+}
+a {
+    margin-top: 10%;
+}

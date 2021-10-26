@@ -11,7 +11,5 @@ export class ContactoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  ngAfterViewInit(){
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundImage='radial-gradient(#fab71c 20%, #212529)';
-  }
+  
 }

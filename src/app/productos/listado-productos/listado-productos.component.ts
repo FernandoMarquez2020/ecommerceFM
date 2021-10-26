@@ -38,7 +38,10 @@ export class ListadoProductosComponent implements OnInit {
     this.productos = newProductos;
   }
 
+  keyUpFunction($event: any){
+    this.filtrar()
 
+  }
 
   // handlerInput(event){
   //   if(event.target.value.length === 0){

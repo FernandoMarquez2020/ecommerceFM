@@ -28,13 +28,31 @@
                         <button (click)="addCart(productos)" routerLink="/compra/carrito"type="button" class="btn btn-outline-success" style="margin: 5px;"><i class="bi bi-bag-check"></i> Comprar</button>
                         <button (click)="addCart(productos)"type="button" class="btn btn-outline-warning" style="margin: 5px;"><i class="bi bi-cart-plus"></i> Agregar</button>
                        
+  <!-- toast -->
+         
+  <app-toast aria-live="polite" aria-atomic="true"></app-toast>
+  <div class="row" style="display: flex;flex-direction: row;justify-content: flex-end;">
+      <div class="toast {{showToast}}" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+              <img src="" class="rounded me-2" alt="">
+              <strong class="me-auto">Aviso:</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+              {{message}}
+          </div>
+      </div>
+  </div>
+  
+  <!-- toast end -->
+
                     </div> 
                     </div>
             </div>
         </div>
         </div>
 
-        
+                
         
        
     </div>

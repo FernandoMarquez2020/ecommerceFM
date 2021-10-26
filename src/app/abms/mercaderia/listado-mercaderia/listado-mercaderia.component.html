@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-12">
         <form class="d-flex">
-            <input autocomplete="off"  class="form-control me-2" name="termino" [(ngModel)]="termino" type="search" placeholder="Search" aria-label="Search">
+            <input (keyup.enter)="keyUpFunction($event)"autocomplete="off"  class="form-control me-2" name="termino" [(ngModel)]="termino" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-warning" (click)="filtrar()" type="button">Search</button>
         </form>
     </div>
@@ -40,7 +40,7 @@
                 <td>{{producto.precio}}</td>
                 <td>{{producto.disponible ? "Si": "No"}}</td>
                 <td>{{producto.categoria}}</td>
-                <td><a class="btn btn-primary" (click)="open2(producto)" style="margin-right:4px">Editar</a><a (click)="eliminarProducto(producto.id)" class="btn btn-danger">Eliminar</a></td>
+                <td style="height: 100%;"><a class="btn btn-primary" (click)="open2(producto)" style="margin-right:4px"><i class="bi bi-pencil-fill"></i></a><a (click)="eliminarProducto(producto.id)" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a></td>
             </tr>
 
         </tbody>

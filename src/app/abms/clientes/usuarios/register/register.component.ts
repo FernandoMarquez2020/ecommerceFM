@@ -1,23 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../user.service';
+import { AuthService } from 'src/app/abms/clientes/usuarios/auth.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
-  email:any;
-  password: any;
-  // password:any;
-  passwordError:boolean | undefined;
+export class RegisterComponent implements OnInit {
+  form: any = {
+    username: null,
+    email: null,
+    password: null
+  };
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
-  constructor(public userService: UsersService) {}
+  constructor(private authService: AuthService) { }
 
-  register() {
-    const user = { email: this.email, password: this.password };
-    this.userService.register(user).subscribe(data => {
-      this.userService.setToken(data.token);
-    });
+  ngOnInit(): void {
+  }
+
+  onSubmit(): void {
+    const { username, email, password } = this.form;
+
+    this.authService.register(username, email, password).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
   }
 }

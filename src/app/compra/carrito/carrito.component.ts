@@ -2,7 +2,8 @@ import { ThisReceiver } from '@angular/compiler';
 import { Component, NgModule, OnInit, ViewEncapsulation } from '@angular/core';
 import { ProductosService } from 'src/app/servicios/productos.service';
 import { OrdenAprobadaComponent } from '../orden-aprobada/orden-aprobada.component';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
@@ -21,15 +22,16 @@ import { OrdenAprobadaComponent } from '../orden-aprobada/orden-aprobada.compone
   
 })
 export class CarritoComponent implements OnInit {
+  // [x: string]: any;
   
   disabled = false;
   columnas = [
     '',
     'Nombre',
-  'Cantidad',
-  'Codigo',
-  'Precio/u',
-  ''
+    'Cantidad',
+    'Codigo',
+    'Precio/u',
+    ''
 ]
 resumenList = [
 
@@ -43,9 +45,9 @@ total : number = 0;
 productos: string[] = []
 cartProduct : any = []
 cantidad : number=0
-  modalService: any;
+
   
-  constructor(private _productosService: ProductosService) { 
+  constructor(private _productosService: ProductosService,private modalService: NgbModal,private _router: Router) { 
     
   }
 
@@ -103,10 +105,10 @@ less(productos:any){
   }
 
 }
-aprobada() {
-  const modalRef = this.modalService.open(OrdenAprobadaComponent);
+// aprobada() {
+//   const modalRef = this.modalService.open(OrdenAprobadaComponent);
   
-}
+// }
 
 finalizarCompra(){
   this.total = 0;
@@ -115,13 +117,14 @@ finalizarCompra(){
     sessionStorage.removeItem(el);
   });
   this.productos = [];
- 
-
+  this._router.navigate(['/compra/orden-aprobada'])
+  
+  
 }
-executeBoth() {
-  // finalizarCompra();
-  // aprobada();
-}
+// executeBoth() {
+//   this.aprobada();
+//   this.finalizarCompra();
+// }
 deleteItem(productos: any){
     sessionStorage.removeItem("producto"+productos.id);
     const newItems = this.cartProduct.filter((item:any)=>{
@@ -139,6 +142,7 @@ toggleShow() {
 
 this.isShown = ! this.isShown;
 this.continue = this.cancelar;
+
 
 }
 

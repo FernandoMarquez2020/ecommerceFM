@@ -25,6 +25,8 @@ export class ProductosComponent implements OnInit {
     id:0
   }
 
+  showToast = "";
+message = "";
   constructor(private _productosService: ProductosService,private toastService: ToastService,private modalService: NgbModal ){ }
   
 
@@ -52,7 +54,11 @@ export class ProductosComponent implements OnInit {
       this.cartProduct.imagenUrl = productos.imagenUrl;
       this.cartProduct.cantidad = this.qty;
       sessionStorage.setItem("producto"+productos.id,JSON.stringify(this.cartProduct));
+      
+      window.location.reload();
+
       this.toastService.show('El producto se agregó a su carrito', { classname: 'bg-warning text-light', delay: 5000 });
+
     }
 
     

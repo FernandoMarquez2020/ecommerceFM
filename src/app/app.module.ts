@@ -30,6 +30,7 @@ import { UsuariosComponent } from './abms/clientes/usuarios/usuarios.component';
 import { LoginComponent } from './abms/clientes/usuarios/login/login.component';
 import { RegisterComponent } from './abms/clientes/usuarios/register/register.component';
 import { CookieService } from "ngx-cookie-service";
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,7 @@ import { CookieService } from "ngx-cookie-service";
     FormsModule,
     
   ],
-  providers: [CookieService],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

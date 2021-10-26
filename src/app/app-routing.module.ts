@@ -6,6 +6,7 @@ import { ListadoMercaderiaComponent } from './abms/mercaderia/listado-mercaderia
 import { NuevaMercaderiaComponent } from './abms/mercaderia/nueva-mercaderia/nueva-mercaderia.component';
 import { CarritoComponent } from './compra/carrito/carrito.component';
 import { OrdenAprobadaComponent } from './compra/orden-aprobada/orden-aprobada.component';
+import { EmpresaComponent } from './menus/empresa/empresa.component';
 import { InicioComponent } from './menus/inicio/inicio.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CategoriasComponent } from './productos/categorias/categorias.component';
@@ -34,10 +35,19 @@ const routes: Routes = [
     path:"mercaderia",component:ListadoMercaderiaComponent
   },
   {  
+    path:"empresa",component:EmpresaComponent
+  },
+  {  
     path:"nueva-mercaderia",component:NuevaMercaderiaComponent
   },
   {  
     path:"detalle",component:DetalleProductosComponent
+  },
+  { 
+    path:"user/login",component:LoginComponent
+  },
+  { 
+    path:"user/register",component:RegisterComponent
   },
 
   {
@@ -46,12 +56,7 @@ const routes: Routes = [
   {  
     path:"**",component:NotFoundComponent
   },
-  { 
-    path:"login",component:LoginComponent
-  },
-  { 
-    path:"register",component:RegisterComponent
-  }
+  
 
 
 

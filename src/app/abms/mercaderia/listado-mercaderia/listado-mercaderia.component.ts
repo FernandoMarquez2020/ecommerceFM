@@ -66,12 +66,9 @@ export class ListadoMercaderiaComponent implements OnInit {
     });
     this.productos = newProductos;
   }
-
-  // handlerInput(event: { target: { value: string | any[]; }; }){
-  //   if(event.target.value.length === 0){
-  //     this.productos = this.backup;
-  //   }
-  // }
+  keyUpFunction($event:any){
+    this.filtrar()
+  }
 
 
 openLg() {

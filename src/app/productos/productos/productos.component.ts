@@ -61,6 +61,15 @@ message = "";
 
     }
 
+    comprar(productos:any){
+      this.cartProduct.id = productos.id;
+      this.cartProduct.nombre = productos.nombre;
+      this.cartProduct.codigo = productos.codigo;
+      this.cartProduct.precio = productos.precio;
+      this.cartProduct.imagenUrl = productos.imagenUrl;
+      this.cartProduct.cantidad = this.qty;
+      sessionStorage.setItem("producto"+productos.id,JSON.stringify(this.cartProduct));
+    }
     
   }
 

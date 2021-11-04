@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "e-comercefm"
+  },
+  "targets": {
+    "e-comercefm": {
+      "hosting": {
+        "ecommerceFM": [
+          "e-comercefm"
+        ]
+      }
+    }
+  }
+}

@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './abms/clientes/usuarios/login/login.component';
-import { RegisterComponent } from './abms/clientes/usuarios/register/register.component';
 import { ListadoMercaderiaComponent } from './abms/mercaderia/listado-mercaderia/listado-mercaderia.component';
 import { NuevaMercaderiaComponent } from './abms/mercaderia/nueva-mercaderia/nueva-mercaderia.component';
 import { CarritoComponent } from './compra/carrito/carrito.component';
@@ -43,16 +41,15 @@ const routes: Routes = [
   {  
     path:"detalle",component:DetalleProductosComponent
   },
-  { 
-    path:"user/login",component:LoginComponent
-  },
-  { 
-    path:"user/register",component:RegisterComponent
-  },
+ 
 
   {
     path:"",component:InicioComponent
   },
+
+  { path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule) },
+
+  { path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },
   {  
     path:"**",component:NotFoundComponent
   },

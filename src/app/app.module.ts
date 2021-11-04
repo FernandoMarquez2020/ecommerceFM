@@ -21,16 +21,18 @@ import { InicioComponent } from './menus/inicio/inicio.component';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MapsComponent } from './componentes/maps/maps.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastComponent } from './componentes/toast/toast.component';
 import { DetalleProductosComponent } from './productos/detalle-productos/detalle-productos.component';
 import { ContactoComponent } from './menus/contacto/contacto.component';
 import { EmpresaComponent } from './menus/empresa/empresa.component';
-import { UsuariosComponent } from './abms/clientes/usuarios/usuarios.component';
-import { LoginComponent } from './abms/clientes/usuarios/login/login.component';
-import { RegisterComponent } from './abms/clientes/usuarios/register/register.component';
-import { CookieService } from "ngx-cookie-service";
-import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth,} from '@angular/fire/auth';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -54,9 +56,12 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     DetalleProductosComponent,
     ContactoComponent,
     EmpresaComponent,
-    UsuariosComponent,
-    LoginComponent,
-    RegisterComponent,
+    
+    
+    
+    
+
+  
     
     
        
@@ -68,9 +73,17 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     RouterModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    // AngularFireModule,
+    // AngularFireAuthModule,
+    
+    
+    
+    
+    
     
   ],
-  providers: [authInterceptorProviders],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

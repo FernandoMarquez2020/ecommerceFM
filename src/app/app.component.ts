@@ -5,8 +5,6 @@ import { CarritoComponent } from './compra/carrito/carrito.component';
 import { ProductosComponent } from './productos/productos/productos.component';
 import { CategoriasComponent } from './productos/categorias/categorias.component';
 import { ContactoComponent } from './menus/contacto/contacto.component';
-import { UserService } from 'src/app/abms/clientes/usuarios/user.service';
-import { TokenStorageService } from 'src/app/abms/clientes/usuarios/token-storage.service';
 
 
 @Component({
@@ -28,7 +26,7 @@ export class AppComponent {
   showModeratorBoard = false;
   username?: string;
 
-  constructor(private modalService: NgbModal,private userService: UserService, private tokenStorageService: TokenStorageService) {}
+  constructor(private modalService: NgbModal) {}
   content?: string;
   ngOnInit(): void {
     this.productos = Object.keys(sessionStorage);
@@ -44,24 +42,9 @@ export class AppComponent {
       }
 
     });
-    this.userService.getPublicContent().subscribe(
-      data => {
-        this.content = data;
-      },
-      err => {
-        this.content = JSON.parse(err.error).message;
-      });
+   
 
-
-    this.isLoggedIn = !!this.tokenStorageService.getToken();
-
-    if (this.isLoggedIn) {
-      const user = this.tokenStorageService.getUser();
-      this.roles = user.roles;
-
-      
-
-      this.username = user.username;};
+    
   }
 
   contact() {
